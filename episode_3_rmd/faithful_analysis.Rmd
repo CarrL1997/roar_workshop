@@ -1,0 +1,42 @@
+---
+title: "Old Faithful exploratory analysis"
+author: "Louise Carr"
+date: "11/11/2020"
+output: html_document
+---
+# Introduction
+The Old Faithful data set contains the waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA.
+
+First load the data
+
+``` {r} 
+df<-faithful 
+```
+
+The data description is given in the table below
+
+| Variable  |   Description                                    | 
+|---------:|  :-----------------------------------------------|
+| Eruption |   The duration of the eruption, minutes           | 
+| Waiting  |   waiting time to next eruption, minutes          | 
+
+
+A summary of the distributions of each variable are as follows: 
+``` {r} 
+summary(df)
+```
+
+The marginal distributions of the variable shown below:
+``` {r} 
+hist(df$eruptions)
+```
+```{r} 
+hist(df$waiting)
+```
+
+# Updated analysis
+
+Both the duration of eruptions and waiting time show a bimodal distribution.
+```{r} 
+plot(df$eruptions,df$waiting)
+```
